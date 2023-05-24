@@ -54,19 +54,20 @@
   <article class="methods">
     <% if (methods && methods.length > 0) { %> <% methods.forEach((method,
     index) => { %>
-    <section class="method-container <%= method.categories[0].title.replaceAll(" ", "-") %>" data-index="<%= index %>">
+    <section class="method-container" data-index="<%= index %>">
       <a
         href="/methods/<%= method.slug %>?id=<%= method.id %>"
         class="link-detail-page"
       >
         <% if (method.template && method.template.originalAsWebP) { %>
         <img
+          class="<%= method.categories[0].title.replaceAll(" ", "-") %>"
           src="<%= method.template.originalAsWebP %>"
           alt="Voorbeeld van <%= method.title %>"
           loading="lazy"
         />
         <% } else { %>
-        <img src="/assets/placeholder.webp" alt="Placeholder Image" loading="lazy" />
+        <img class="<%= method.categories[0].title.replaceAll(" ", "-") %>" src="/assets/placeholder.webp" alt="Placeholder Image" loading="lazy" />
         <% } %>
         <section class="methods-titles">
           <h2><%= method.title %></h2>
