@@ -59,13 +59,14 @@
         href="/methods/<%= method.slug %>?id=<%= method.id %>"
         class="link-detail-page"
       >
-        <% if (method.template && method.template.url) { %>
+        <% if (method.template && method.template.originalAsWebP) { %>
         <img
-          src="<%= method.template.url %>"
+          src="<%= method.template.originalAsWebP %>"
           alt="Voorbeeld van <%= method.title %>"
+          loading="lazy"
         />
         <% } else { %>
-        <img src="/assets/placeholder.webp" alt="Placeholder Image" />
+        <img src="/assets/placeholder.webp" alt="Placeholder Image" loading="lazy" />
         <% } %>
         <section class="methods-titles">
           <h2><%= method.title %></h2>
