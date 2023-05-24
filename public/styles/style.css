@@ -119,7 +119,6 @@
   display: none;
 }
 
-
 /* 
     tekenmethodes pagina
 */
@@ -280,35 +279,33 @@ li a {
   word-break: break-word;
 }
 
-
 /*
                         method categorie colors  
 */
 
 .Leren-over-jezelf-en-reflecteren {
-  border-color: var(--vtSec-Green);
+  border-color: var(--vtSec-Green) !important;
 }
 
 .Leren-over-anderen {
-  border-color: var(--vtYellow);
+  border-color: var(--vtYellow) !important;
 }
 
 .Creatief-denken {
-  border-color: var(--vtRed-80);
+  border-color: var(--vtRed-80) !important;
 }
 
 .Organiseren-en-plannen {
-  border-color: var(--vtSec-DarkBlue);
+  border-color: var(--vtSec-DarkBlue) !important;
 }
 
 .Communcieren-en-presenteren {
-  border-color: var(--vtLightBlue-80);
+  border-color: var(--vtLightBlue-80) !important;
 }
 
 .Onderzoeken-en-begrijpen {
-  border-color: var(--vtRed);
+  border-color: var(--vtRed) !important;
 }
-
 
 /*
                         RESPONSIVE TABLET  
@@ -331,7 +328,6 @@ li a {
   .categorie span {
     font-size: 1em;
   }
-
 
   .content {
     padding: 0 50px;
@@ -435,7 +431,6 @@ footer ul li {
   padding-left: 0px;
 }
 @media (min-width: 45em) {
-
   /* Index page */
 
   /* categorieën */
@@ -528,7 +523,7 @@ footer ul li {
 
 @media (min-width: 68em) {
   /* Categorien index page */
-   /* Index page */
+  /* Index page */
 
   /* categorieën */
   .categorien {
@@ -557,7 +552,6 @@ footer ul li {
   .lower {
     margin: 3em 0;
   }
-
 
   /* 
     tekenmethodes pagina
