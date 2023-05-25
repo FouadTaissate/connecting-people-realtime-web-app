@@ -77,6 +77,34 @@
     mobile first besties (1 kolom op tekenmethodes pagina)
 */
 
+/* Tipruimte */
+
+.tiproom section {
+  background-color: var(--vtSec-DarkBlue);
+  display: flex;
+}
+
+.tiproom-message {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 1rem;
+}
+
+.tiproom-message li {
+  background: var(--vtGrey-50);
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.tiproom-form {
+  height: 50rem;
+  width: 10rem;
+  background: var(--vtGrey-50);
+}
+
 /* Index page */
 
 /* categorieën */
