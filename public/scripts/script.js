@@ -34,28 +34,28 @@ nextButton.addEventListener("click", (e) => {
 //load more button : tekenmethodes
 
 // Socket.io dingen
-let ioServer = io()
-let messages = document.querySelector('section ul')
-let input = document.querySelector('input')
+let ioServer = io();
+let messages = document.querySelector("section ul");
+let input = document.querySelector("input");
 
 // Luister naar het submit event
-document.querySelector('form').addEventListener('submit', (event) => {
-  event.preventDefault()
+document.querySelector("form").addEventListener("submit", (event) => {
+  event.preventDefault();
 
   // Als er überhaupt iets getypt is
   if (input.value) {
     // Stuur het bericht naar de server
-    ioServer.emit('message', input.value)
+    ioServer.emit("message", input.value);
 
     // Leeg het form field
-    input.value = ''
+    input.value = "";
   }
-})
+});
 
 // Luister naar berichten van de server
-ioServer.on('message', (message) => {
-  addMessage(message)
-})
+ioServer.on("message", (message) => {
+  addMessage(message);
+});
 
 /**
  * Impure function that appends a new li item holding the passed message to the
@@ -63,6 +63,8 @@ ioServer.on('message', (message) => {
  * @param {*} message the message to append
  */
 function addMessage(message) {
-  messages.appendChild(Object.assign(document.createElement('li'), { textContent: message }))
-  messages.scrollTop = messages.scrollHeight
-} 
+  messages.appendChild(
+    Object.assign(document.createElement("li"), { textContent: message })
+  );
+  messages.scrollTop = messages.scrollHeight;
+}
