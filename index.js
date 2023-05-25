@@ -12,6 +12,9 @@ const server = express();
 const http = createServer(server);
 const ioServer = new Server(http);
 const port = process.env.PORT || 4000;
+const historySize = 50
+
+let history = []
 
 server.use(express.static(path.resolve("public")));
 
@@ -20,8 +23,18 @@ ioServer.on("connection", (client) => {
   // Log de connectie naar console
   console.log(`user ${client.id} connected`);
 
+    // Stuur de history
+    client.emit('history', history)
+
   // Luister naar een message van een gebruiker
   client.on("message", (message) => {
+    // Check de maximum lengte van de historie
+    while (history.length > historySize) {
+      history.shift()
+    }
+    // Voeg het toe aan de historie
+    history.push(message)
+
     // Log het ontvangen bericht
     console.log(`user ${client.id} sent message: ${message}`);
 
