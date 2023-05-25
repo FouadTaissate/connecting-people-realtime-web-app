@@ -64,6 +64,7 @@ server.set("views", "./views");
 // Stel het poortnummer in waar express op gaat luisteren
 server.set("port", process.env.PORT || 4000);
 
+
 // Stel afhandeling van formulieren inzx
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
@@ -103,6 +104,10 @@ server.get("/over", (request, response) => {
 
 server.get("/tipruimte", (request, response) => {
   response.render("tipruimte");
+});
+
+server.get("/tekenruimte", (request, response) => {
+  response.render("tekenruimte");
 });
 
 server.get("/tekenmethodes", (request, response) => {
