@@ -77,6 +77,56 @@
     mobile first besties (1 kolom op tekenmethodes pagina)
 */
 
+/* Tipruimte */
+
+.tiproom section {
+  background-color: var(--vtSec-DarkBlue);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 2rem;
+}
+
+.tiproom-message {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 1rem;
+}
+
+.tiproom-tips {
+  grid-area: 1 / 1 / 2 / 3;
+  margin: 1rem 0;
+}
+
+.tiproom-message li {
+  background: var(--vtGrey-50);
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.tiproom-form {
+  height: 70vh;
+  width: 80%;
+  margin: 1rem auto;
+  background: var(--vtGrey-50);
+  grid-area: 1 / 3 / 2 / 4;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.send-button {
+  transform: rotate(0deg);
+}
+
+.send-button:hover {
+  cursor: pointer;
+}
+
 /* Index page */
 
 /* categorieën */
@@ -118,7 +168,6 @@
 .view-method {
   display: none;
 }
-
 
 /* 
     tekenmethodes pagina
@@ -280,35 +329,33 @@ li a {
   word-break: break-word;
 }
 
-
 /*
                         method categorie colors  
 */
 
 .Leren-over-jezelf-en-reflecteren {
-  border-color: var(--vtSec-Green);
+  border-color: var(--vtSec-Green) !important;
 }
 
 .Leren-over-anderen {
-  border-color: var(--vtYellow);
+  border-color: var(--vtYellow) !important;
 }
 
 .Creatief-denken {
-  border-color: var(--vtRed-80);
+  border-color: var(--vtRed-80) !important;
 }
 
 .Organiseren-en-plannen {
-  border-color: var(--vtSec-DarkBlue);
+  border-color: var(--vtSec-DarkBlue) !important;
 }
 
 .Communcieren-en-presenteren {
-  border-color: var(--vtLightBlue-80);
+  border-color: var(--vtLightBlue-80) !important;
 }
 
 .Onderzoeken-en-begrijpen {
-  border-color: var(--vtRed);
+  border-color: var(--vtRed) !important;
 }
-
 
 /*
                         RESPONSIVE TABLET  
@@ -331,7 +378,6 @@ li a {
   .categorie span {
     font-size: 1em;
   }
-
 
   .content {
     padding: 0 50px;
@@ -435,7 +481,6 @@ footer ul li {
   padding-left: 0px;
 }
 @media (min-width: 45em) {
-
   /* Index page */
 
   /* categorieën */
@@ -528,7 +573,7 @@ footer ul li {
 
 @media (min-width: 68em) {
   /* Categorien index page */
-   /* Index page */
+  /* Index page */
 
   /* categorieën */
   .categorien {
@@ -557,7 +602,6 @@ footer ul li {
   .lower {
     margin: 3em 0;
   }
-
 
   /* 
     tekenmethodes pagina
