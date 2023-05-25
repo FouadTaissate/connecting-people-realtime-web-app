@@ -105,6 +105,14 @@
   background: var(--vtGrey-50);
 }
 
+.send-button {
+  transform: rotate(0deg);
+}
+
+.send-button:hover {
+  cursor: pointer;
+}
+
 /* Index page */
 
 /* categorieën */
