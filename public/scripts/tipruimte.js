@@ -1,12 +1,14 @@
 let socket = io();
 let messages = document.querySelector("main section ul");
-let input = document.querySelector("input");
+let inputName = document.querySelector("input.name");
+let inputTip = document.querySelector("input.tip")
 
 document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
-  if (input.value) {
-    socket.emit("message", input.value);
-    input.value = "";
+  if (inputName.value && inputTip.value) {
+    socket.emit("message", inputName.value + ": " + inputTip.value);
+    inputName.value = "";
+    inputTip.value = "";
   }
 });
 

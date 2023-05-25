@@ -81,7 +81,11 @@
 
 .tiproom section {
   background-color: var(--vtSec-DarkBlue);
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 2rem;
 }
 
 .tiproom-message {
@@ -92,6 +96,11 @@
   gap: 1rem;
 }
 
+.tiproom-tips {
+  grid-area: 1 / 1 / 2 / 3;
+  margin: 1rem 0;
+}
+
 .tiproom-message li {
   background: var(--vtGrey-50);
   margin-top: 1rem;
@@ -100,9 +109,14 @@
 }
 
 .tiproom-form {
-  height: 50rem;
-  width: 10rem;
+  height: 70vh;
+  width: 80%;
+  margin: 1rem auto;
   background: var(--vtGrey-50);
+  grid-area: 1 / 3 / 2 / 4;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .send-button {
