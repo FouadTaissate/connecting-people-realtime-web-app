@@ -12,9 +12,9 @@ const server = express();
 const http = createServer(server);
 const ioServer = new Server(http);
 const port = process.env.PORT || 4000;
-const historySize = 50
+const historySize = 50;
 
-let history = []
+let history = [];
 
 server.use(express.static(path.resolve("public")));
 
@@ -23,17 +23,17 @@ ioServer.on("connection", (client) => {
   // Log de connectie naar console
   console.log(`user ${client.id} connected`);
 
-    // Stuur de history
-    client.emit('history', history)
+  // Stuur de history
+  client.emit("history", history);
 
   // Luister naar een message van een gebruiker
   client.on("message", (message) => {
     // Check de maximum lengte van de historie
     while (history.length > historySize) {
-      history.shift()
+      history.shift();
     }
     // Voeg het toe aan de historie
-    history.push(message)
+    history.push(message);
 
     // Log het ontvangen bericht
     console.log(`user ${client.id} sent message: ${message}`);
@@ -62,8 +62,7 @@ server.set("view engine", "ejs");
 server.set("views", "./views");
 
 // Stel het poortnummer in waar express op gaat luisteren
-server.set("port", process.env.PORT || 4000);
-
+// server.set("port", process.env.PORT || 4000);
 
 // Stel afhandeling van formulieren inzx
 server.use(express.json());
