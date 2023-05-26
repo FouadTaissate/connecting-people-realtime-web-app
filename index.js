@@ -62,7 +62,7 @@ server.set("view engine", "ejs");
 server.set("views", "./views");
 
 // Stel het poortnummer in waar express op gaat luisteren
-// server.set("port", process.env.PORT || 4000);
+server.set("port", process.env.PORT || 4000);
 
 // Stel afhandeling van formulieren inzx
 server.use(express.json());
