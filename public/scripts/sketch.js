@@ -2,7 +2,7 @@ var socket;
 
 // canvas setup
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(1850, 750);
   // background(0, 100, 200);
 }
 
