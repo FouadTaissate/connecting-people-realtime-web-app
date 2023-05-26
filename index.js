@@ -1,10 +1,58 @@
+import * as path from "path";
+
 import express from "express";
+import { Server } from "socket.io";
+import { createServer } from "http";
 
 const url = "https://api.visualthinking.fdnd.nl/api/v1/";
 // const data = await fetch(url).then((response) => response.json())
 
 // Maak een nieuwe express app
 const server = express();
+const http = createServer(server);
+const ioServer = new Server(http);
+const port = process.env.PORT || 4000;
+const historySize = 50
+
+let history = []
+
+server.use(express.static(path.resolve("public")));
+
+// Start de socket.io server op
+ioServer.on("connection", (client) => {
+  // Log de connectie naar console
+  console.log(`user ${client.id} connected`);
+
+    // Stuur de history
+    client.emit('history', history)
+
+  // Luister naar een message van een gebruiker
+  client.on("message", (message) => {
+    // Check de maximum lengte van de historie
+    while (history.length > historySize) {
+      history.shift()
+    }
+    // Voeg het toe aan de historie
+    history.push(message)
+
+    // Log het ontvangen bericht
+    console.log(`user ${client.id} sent message: ${message}`);
+
+    // Verstuur het bericht naar alle clients
+    ioServer.emit("message", message);
+  });
+
+  // Luister naar een disconnect van een gebruiker
+  client.on("disconnect", () => {
+    // Log de disconnect
+    console.log(`user ${client.id} disconnected`);
+  });
+});
+
+// Start een http server op het ingestelde poortnummer en log de url
+http.listen(port, () => {
+  console.log("listening on http://localhost:" + port);
+});
 
 // Stel de public map in
 server.use(express.static("public"));
@@ -14,7 +62,8 @@ server.set("view engine", "ejs");
 server.set("views", "./views");
 
 // Stel het poortnummer in waar express op gaat luisteren
-server.set("port", process.env.PORT || 8000);
+server.set("port", process.env.PORT || 4000);
+
 
 // Stel afhandeling van formulieren inzx
 server.use(express.json());
@@ -108,12 +157,12 @@ server.get("/method/:slug/form", (request, response) => {
 });
 
 // Stel het poortnummer in
-server.set("port", 8000);
+// server.set("port", 4000);
 
 // Start met luisteren
-server.listen(server.get("port"), () => {
-  console.log(`Application started on http://localhost:${server.get("port")}`);
-});
+// server.listen(server.get("port"), () => {
+//   console.log(`Application started on http://localhost:${server.get("port")}`);
+// });
 
 /**
  * Wraps the fetch api and returns the response body parsed through json

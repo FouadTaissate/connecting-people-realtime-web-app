@@ -2,20 +2,28 @@
 
 <body>
 
-  <main>
+  <main class="tiproom">
+    <h1>Tekentips</h1>
     <section>
-      <p class="top-text">Tekentips</p>
-      <p class="recent-tips">Recente tips</p>
-      <ul></ul>
-      <form>
-        <input type="text" autocomplete="off" placeholder="Geef hier je tip">
-        <button type="button">Verstuur!</button>
+      <article class="tiproom-tips">
+        <ul class="tiproom-message"></ul>
+      </article>
+      <form class="tiproom-form">
+        <h2>Geef een tip :3</h2>
+
+        <label for="name">naam</label>
+        <input required class="name" type="text" autocomplete="additional-name" placeholder="Naam..." name="naam" id="naam" />
+        
+        <label for="tip">schrijf hier je tip</label>
+        <input required class="tip" type="text" autocomplete="off" placeholder="Geef hier je tip" name="tip" id="tip" />
+        
+        <input class="send-button" type="submit" value="Verzend!">
       </form>
     </section>
   </main>
 
   <script src="/socket.io/socket.io.js"></script>
-  <script src="/script.js"></script>
+  <script src="/scripts/tipruimte.js"></script>
 </body>
 </html>
 
