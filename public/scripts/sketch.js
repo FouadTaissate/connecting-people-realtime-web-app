@@ -3,7 +3,7 @@ var socket;
 // canvas setup
 function setup() {
   createCanvas(400, 400);
-  background(0, 100, 200);
+  // background(0, 100, 200);
 }
 
 function mouseDragged() {
