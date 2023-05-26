@@ -1419,32 +1419,6 @@ footer ul li {
   }
 }
 
-/* Styling voor de viewcount */
 
-div.viewcount-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 2.6rem;
-  height: 3rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background-color: var(--vtGrey-80);
-
-}
-
-span.viewcount-counter {
-  font-family: var(--vtPrimaryFont);
-  font-size: 0.75rem;
-  color: var(--vtDarkBlue);
-}
-
-img.viewcount-icon {
-  width: 1.333rem;
-  height: 1.333rem;
-}
 
 /* styling van de tekenruimte */
