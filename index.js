@@ -155,6 +155,11 @@ server.get("/method/:slug/form", (request, response) => {
   });
 });
 
+// Dit is alleen om te testen :)
+server.get("/viewcount", (request, response) => {
+  response.render("viewcount");
+});
+
 // Stel het poortnummer in
 // server.set("port", 4000);
 
