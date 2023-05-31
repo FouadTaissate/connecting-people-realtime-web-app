@@ -144,6 +144,10 @@
   color: var(--vtWhite);
 }
 
+.gray1, .gray2 {
+  background: var(--vtGrey-50);
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto;
@@ -151,28 +155,28 @@
   justify-content: center;
 }
 
-.logo {
+/* .logo {
   grid-column-start: 3;
   grid-column-end: 5;
   grid-row-start: 1;
   text-align: center;
-}
+} */
 
 .h1 {
-  grid-column-start: 2;
-  grid-column-end: 6;
+  grid-column-start: 3;
+  grid-column-end: 7;
   grid-row-start: 2;
 }
 
 .h2 {
-  grid-column-start: 3;
-  grid-column-end: 5;
+  grid-column-start: 4;
+  grid-column-end: 6;
   grid-row-start: 3;
 }
 
 .p {
-  grid-column-start: 3;
-  grid-column-end: 5;
+  grid-column-start: 4;
+  grid-column-end: 6;
   grid-row-start: 3;
   margin-bottom: 30%;
   opacity: 50%;
@@ -182,37 +186,51 @@
 
 .button {
   z-index: 1;
-  grid-column-start: 3;
-  grid-column-end: 5;
+  grid-column-start: 4;
+  grid-column-end: 6;
   grid-row-start: 3;
   margin-top: 65%;
 }
 
 .blue,
 .h3-blue {
-  grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 4;
   grid-row-start: 3;
 }
 
 .yellow,
 .h3-yellow {
-  grid-column-start: 5;
-  grid-column-end: 7;
+  grid-column-start: 6;
+  grid-column-end: 8;
   grid-row-start: 3;
 }
 
 .light-blue,
 .h3-light-blue {
-  grid-column-start: 2;
-  grid-column-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 5;
   grid-row-start: 4;
 }
 
 .red,
 .h3-red {
-  grid-column-start: 4;
-  grid-column-end: 6;
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 4;
+}
+
+.gray1,
+.h3-gray1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 4;
+}
+
+.gray2,
+.h3-gray2 {
+  grid-column-start: 7;
+  grid-column-end: 9;
   grid-row-start: 4;
 }
 
@@ -443,6 +461,8 @@
 
 .h3-light-blue,
 .h3-red,
+.h3-gray1,
+.h3-gray2,
 .h3-yellow2-5,
 .h3-yellow2-6,
 .h3-blue3-5,
@@ -458,6 +478,8 @@
 
 .light-blue,
 .red,
+.gray1,
+.gray2,
 .yellow2-5,
 .yellow2-6,
 .blue3-5,
@@ -475,6 +497,8 @@
 .h3-yellow,
 .h3-light-blue,
 .h3-blue,
+.h3-gray1,
+.h3-gray2,
 .h3-yellow2-1,
 .h3-yellow2-2,
 .h3-yellow2-3,
@@ -552,6 +576,8 @@
 .yellow,
 .light-blue,
 .blue,
+.gray1,
+.gray2,
 .yellow2-1,
 .yellow2-2,
 .yellow2-3,
@@ -619,12 +645,14 @@ h3 em {
 a {
   text-decoration: none;
   cursor: pointer;
+  color: var(--vtDarkBlue);
 }
 
 header {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 1%;
 }
 
 .navmain ul,
@@ -1254,7 +1282,7 @@ li a {
   height: auto;
 }
 
-#touch:checked + .slide {
+#touch:checked+.slide {
   height: auto;
 }
 
