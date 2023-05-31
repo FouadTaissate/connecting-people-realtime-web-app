@@ -66,22 +66,21 @@
             <div class="buttondeel">
                 <h4>Stappenplan</h4>
                 <button id="stappenplanbutton">
-                   <img src="/assets/pijl-hexagon-naar-beneden.svg" alt="Pijl naar beneden">
+                <img src="/assets/pijl-hexagon-naar-beneden.svg" alt="Pijl naar beneden">
                 </button>
-               </div>
-               <div id="stappen" class="stappen">
-                   <ol class="tobiashaha">
-                       <% method.steps.forEach(step => { %>
-                           <li>
-                               <h4><%- step.title %></h4>
-                               <div class="step-description">
-                                   <%- step.description.html %>
-                               </div>
-                           </li>
-                       <% }) %>
-                   </ol>
-                       
-               </div>
+            </div>
+            <div id="stappen" class="stappen">
+                <ol class="tobiashaha">
+                    <% method.steps.forEach(step => { %>
+                        <li>
+                            <h4><%- step.title %></h4>
+                            <div class="step-description">
+                                <%- step.description.html %>
+                            </div>
+                        </li>
+                    <% }) %>
+                </ol>         
+            </div>
         </section>
     </section>
     </main>
