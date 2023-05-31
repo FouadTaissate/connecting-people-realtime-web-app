@@ -63,8 +63,8 @@ ioServer.on('message', (message) => {
  * @param {*} message the message to append
  */
 function addMessage(message) {
-  messages.appendChild(Object.assign(document.createElement('li'), { textContent: message }))
-  messages.scrollTop = messages.scrollHeight
-} 
-
-
+  messages.appendChild(
+    Object.assign(document.createElement("li"), { textContent: message })
+  );
+  messages.scrollTop = messages.scrollHeight;
+}
