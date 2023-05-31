@@ -1426,10 +1426,12 @@ div.viewcount-container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 2.6rem;
+  min-width: 2.6rem;
+  max-width: 2.6rem;
   height: 3rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1.2rem;
+  margin-right: 1.2rem;
+  margin-left: -1rem;
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   background-color: var(--vtGrey-80);
