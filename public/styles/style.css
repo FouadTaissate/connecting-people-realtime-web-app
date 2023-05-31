@@ -1074,6 +1074,10 @@ h3 p {
   min-height: 7rem;
 }
 
+#naam, #tip{
+  font-family: var(--vtSecondaryFont);
+}
+  
 .tiproom-form-button {
   display: flex;
   background: transparent;
