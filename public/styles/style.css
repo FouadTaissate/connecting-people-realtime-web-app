@@ -507,7 +507,6 @@ header {
 .navheader {
   display: flex;
   align-items: center;
-
 }
 
 .navheader li {
@@ -613,7 +612,7 @@ h3 p {
   text-transform: none;
 }
 
-button {
+.button-homepage {
   width: 72px;
   height: 66px;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
@@ -868,6 +867,7 @@ button {
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 2rem;
+  padding-left: 1rem;
 }
 
 .tiproom-message {
@@ -888,12 +888,13 @@ button {
   margin-top: 1rem;
   border-radius: 0.5rem;
   padding: 1rem;
+  margin-left: 1rem;
 }
 
 .tiproom-form {
   height: 70vh;
   width: 80%;
-  margin: 1rem auto;
+  margin: 2rem auto;
   background: var(--vtGrey-50);
   grid-area: 1 / 3 / 2 / 4;
   border-radius: 0.5rem;
@@ -901,11 +902,42 @@ button {
   flex-direction: column;
 }
 
-.send-button {
-  transform: rotate(0deg);
+.tiproom-form h2 {
+  margin-top: 1rem;
 }
 
-.send-button:hover {
+.tiproom-form h2,
+.tiproom-form input,
+.tiproom-form label,
+.tiproom-form button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.tiproom-form input {
+  border: none;
+  border-radius: 1rem;
+}
+
+#naam {
+  min-height: 3rem;
+}
+
+#tip {
+  min-height: 10rem;
+}
+
+.tiproom-form-button {
+  display: flex;
+  background: transparent;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  border: none;
+  margin-top: 1rem;
+}
+
+.tiproom-form-button:hover {
   cursor: pointer;
 }
 
@@ -966,8 +998,7 @@ button {
 
 .intro {
   display: grid;
-  grid:
-    ". intro ." 1fr / 1fr 5fr 1fr;
+  grid: ". intro ." 1fr / 1fr 5fr 1fr;
   gap: 8px;
 
   /* background-color: var(--vtGrey); */
@@ -1083,7 +1114,7 @@ li a {
   height: auto;
 }
 
-#touch:checked+.slide {
+#touch:checked + .slide {
   height: auto;
 }
 
@@ -1299,8 +1330,7 @@ footer ul li {
 
   .tekenmethodes-main {
     display: grid;
-    grid:
-      ". methods ." 1fr / 0.5fr 3fr 0.5fr;
+    grid: ". methods ." 1fr / 0.5fr 3fr 0.5fr;
     grid-auto-flow: dense;
     /* fill in empty cells */
     margin-bottom: 100px;
@@ -1326,8 +1356,7 @@ footer ul li {
   footer {
     width: 100%;
     display: grid;
-    grid:
-      "logo ." auto "col-1 col-3" auto "col-2 ." auto / 1fr 1fr;
+    grid: "logo ." auto "col-1 col-3" auto "col-2 ." auto / 1fr 1fr;
     gap: 10px;
   }
 
@@ -1392,8 +1421,7 @@ footer ul li {
 
   .intro {
     display: grid;
-    grid:
-      ". intro ." 1fr / 0.75fr 3fr 0.75fr;
+    grid: ". intro ." 1fr / 0.75fr 3fr 0.75fr;
     gap: 8px;
 
     /* background-color: var(--vtGrey); */
@@ -1424,8 +1452,7 @@ footer ul li {
 
   .categories {
     display: grid;
-    grid:
-      ". category ." 1fr / 1fr 4fr 1fr;
+    grid: ". category ." 1fr / 1fr 4fr 1fr;
     margin-bottom: 50px;
   }
 
@@ -1490,8 +1517,7 @@ footer ul li {
 
   .tekenmethodes-main {
     display: grid;
-    grid:
-      ". methods ." 1fr / 0.75fr 3fr 0.75fr;
+    grid: ". methods ." 1fr / 0.75fr 3fr 0.75fr;
     grid-auto-flow: dense;
     /* fill in empty cells */
     margin-bottom: 100px;
@@ -1529,8 +1555,7 @@ footer ul li {
     display: grid;
 
     display: grid;
-    grid:
-      "logo col-1 col-2 col-3" auto / 1fr 1fr 1fr 1fr;
+    grid: "logo col-1 col-2 col-3" auto / 1fr 1fr 1fr 1fr;
     gap: 10px;
   }
 
@@ -1555,7 +1580,5 @@ footer ul li {
     margin-top: 0px;
   }
 }
-
-
 
 /* styling van de tekenruimte */
