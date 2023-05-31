@@ -1044,27 +1044,34 @@ h3 p {
 
 .tiproom-form h2 {
   margin-top: 1rem;
+  font-family: var(--vtPrimaryFont);
 }
 
 .tiproom-form h2,
-.tiproom-form input,
+.tiproom-form textarea,
 .tiproom-form label,
 .tiproom-form button {
   margin-left: 1rem;
   margin-right: 1rem;
 }
 
-.tiproom-form input {
+.tiproom-form textarea {
   border: none;
   border-radius: 1rem;
+  word-break: break-all;
+  resize: none;
+  padding: 0.5rem;
+  font-family: var(--vtSecondaryFont);
+  font-size: 0.8rem;
 }
 
 #naam {
   min-height: 3rem;
+  margin-bottom: 1rem;
 }
 
 #tip {
-  min-height: 10rem;
+  min-height: 7rem;
 }
 
 .tiproom-form-button {

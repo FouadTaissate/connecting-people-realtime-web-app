@@ -1,7 +1,7 @@
 let socket = io();
 let messages = document.querySelector("main section ul");
-let inputName = document.querySelector("input.name");
-let inputTip = document.querySelector("input.tip")
+let inputName = document.querySelector("textarea.name");
+let inputTip = document.querySelector("textarea.tip")
 
 document.querySelector("form").addEventListener("submit", (event) => {
   event.preventDefault();
