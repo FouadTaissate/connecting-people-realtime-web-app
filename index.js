@@ -117,7 +117,7 @@ server.get("/tekenmethodes", (request, response) => {
   });
 });
 
-server.get("/method/:slug/beschrijving", (request, response) => {
+server.get("/method/:slug", (request, response) => {
   let detailPageUrl = url + "method/" + request.params.slug;
 
   fetchJson(detailPageUrl).then((data) => {

@@ -831,6 +831,12 @@ h3 p {
   padding-bottom: 0.2rem;
 
   margin-top: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.line img {
+  margin-right: 0.5rem;
 }
 
 .arrows-line {
@@ -1305,7 +1311,6 @@ li a {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
 }
 
@@ -1316,9 +1321,21 @@ li a {
 }
 
 .methods-titles {
-  width: 80%;
+  width: 90%;
   margin-top: 20px;
-  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  hyphens: auto;
+}
+
+.methods-titles:hover {
+  white-space: unset;
+  text-overflow: unset;
+}
+
+.detail-main {
+  margin: 2rem 0;
 }
 
 /*
