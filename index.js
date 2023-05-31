@@ -3,6 +3,7 @@ import * as path from "path";
 import express from "express";
 import { Server } from "socket.io";
 import { createServer } from "http";
+import initializeMethods from "./helpers/initializeMethods.js";
 
 const url = "https://api.visualthinking.fdnd.nl/api/v1/";
 // const data = await fetch(url).then((response) => response.json())
@@ -14,6 +15,8 @@ const ioServer = new Server(http);
 const port = process.env.PORT || 4000;
 const historySize = 50;
 
+let viewCounts = initializeMethods(url + "methods");
+
 let history = [];
 
 server.use(express.static(path.resolve("public")));
@@ -22,6 +25,8 @@ server.use(express.static(path.resolve("public")));
 ioServer.on("connection", (client) => {
   // Log de connectie naar console
   console.log(`user ${client.id} connected`);
+
+  client.emit("message", "Welcome to the chat!");
 
   // Stuur de history
   client.emit("history", history);
