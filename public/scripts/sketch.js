@@ -4,21 +4,13 @@ var socket;
 function setup() {
   createCanvas(1850, 750);
   // background(0, 100, 200);
-
-  socket = io.connect("http://localhost4000");
 }
 
 function mouseDragged() {
   console.log(mouseX + "," + mouseY);
-
-  var mouseData = {
-    x: mouseX,
-    y: mouseY,
-  };
-}
-
-// drawing function
-function draw() {
   fill(232, 182, 0);
   ellipse(mouseX, mouseY, 30, 30);
 }
+
+// drawing function
+function draw() {}
