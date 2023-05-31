@@ -645,6 +645,10 @@ h3 em {
 a {
   text-decoration: none;
   cursor: pointer;
+  color: var(--vtWhite);
+}
+
+.a {
   color: var(--vtDarkBlue);
 }
 
