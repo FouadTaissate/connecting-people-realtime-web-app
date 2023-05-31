@@ -1075,6 +1075,7 @@ h3 p {
   border-radius: 100%;
   border: none;
   margin-top: 1rem;
+  align-self: flex-end;
 }
 
 .tiproom-form-button:hover {
