@@ -1,3 +1,4 @@
+import fetch from "node-fetch";
 import * as path from "path";
 
 import express from "express";
@@ -156,7 +157,7 @@ server.get("/tekenmethodes", (request, response) => {
   });
 });
 
-server.get("/method/:slug/beschrijving", (request, response) => {
+server.get("/method/:slug", (request, response) => {
   let detailPageUrl = url + "method/" + request.params.slug;
 
   fetchJson(detailPageUrl).then((data) => {
@@ -192,11 +193,6 @@ server.get("/method/:slug/form", (request, response) => {
       response.render("form", newdata);
     });
   });
-});
-
-// Dit is alleen om te testen :)
-server.get("/viewcount", (request, response) => {
-  response.render("viewcount");
 });
 
 // Stel het poortnummer in
