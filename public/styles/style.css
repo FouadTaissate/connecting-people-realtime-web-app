@@ -1326,14 +1326,9 @@ li a {
   justify-content: center;
 }
 
-.method-container{
-  margin-bottom: 1.5rem;
-
-}
-
 .method-container img {
   width: 300px;
-  border: 1px solid;
+  border: 2px solid;
   border-color: var(--vtGrey-50);
 }
 
