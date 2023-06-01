@@ -18,7 +18,6 @@ const ioServer = new Server(http);
 const port = process.env.PORT || 4000;
 const historySize = 50;
 
-
 let viewCounts = await initializeViewCountObj(url + "methods");
 
 let history = [];
@@ -34,10 +33,8 @@ ioServer.on("connection", (client) => {
 
   // Luister naar welke pagina de gebruiker bezoekt
   client.on("page", (page) => {
-    
     // Log de pagina naar console
     cLog.page(client.id, page);
-
 
     // Verhoog de viewcount van de pagina
     viewCounts.viewCount[page]++;
@@ -91,11 +88,6 @@ ioServer.on("connection", (client) => {
   });
 });
 
-client.on("mouse", mouseMsg);
-
-function mouseMsg(mouseData) {
-  socket.broadcast.emit("mouse", mouseData);
-}
 // Start een http server op het ingestelde poortnummer en log de url
 http.listen(port, () => {
   console.log("listening on http://localhost:" + port);
