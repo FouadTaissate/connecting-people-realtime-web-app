@@ -15,8 +15,9 @@ const fetch = require("node-fetch");
 const server = express();
 const http = createServer(server);
 const ioServer = new Server(http);
-const port = process.env.PORT || 4242;
+const port = process.env.PORT || 4000;
 const historySize = 50;
+
 
 let viewCounts = await initializeViewCountObj(url + "methods");
 
@@ -33,8 +34,10 @@ ioServer.on("connection", (client) => {
 
   // Luister naar welke pagina de gebruiker bezoekt
   client.on("page", (page) => {
+    
     // Log de pagina naar console
     cLog.page(client.id, page);
+
 
     // Verhoog de viewcount van de pagina
     viewCounts.viewCount[page]++;
@@ -68,20 +71,6 @@ ioServer.on("connection", (client) => {
     // Log de disconnect
     cLog.disconnect(client.id);
 
-    http.listen(port, () => {
-      console.log("listening on http://localhost:" + port);
-    });
-
-    // Stel de public map in
-    server.use(express.static("public"));
-
-    // Stel de view engine in
-    server.set("view engine", "ejs");
-    server.set("views", "./views");
-
-    // Stel het poortnummer in waar express op gaat luisteren
-    server.set("port", process.env.PORT || 4242);
-
     // Loop door de viewCounts.users
     for (const [key, array] of Object.entries(viewCounts.users)) {
       // Loop door iedere array in de viewCounts.users
@@ -108,6 +97,19 @@ function mouseMsg(mouseData) {
   socket.broadcast.emit("mouse", mouseData);
 }
 // Start een http server op het ingestelde poortnummer en log de url
+http.listen(port, () => {
+  console.log("listening on http://localhost:" + port);
+});
+
+// Stel de public map in
+server.use(express.static("public"));
+
+// Stel de view engine in
+server.set("view engine", "ejs");
+server.set("views", "./views");
+
+// Stel het poortnummer in waar express op gaat luisteren
+server.set("port", process.env.PORT || 4000);
 
 // Stel afhandeling van formulieren inzx
 server.use(express.json());
