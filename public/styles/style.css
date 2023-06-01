@@ -1868,3 +1868,8 @@ footer ul li {
   display: flex;
   justify-content: center;
 }
+
+* styling van de tekenruimte */
+   .h2-tekenruimte{
+    font-family: var(--vtPrimaryFont);
+   }

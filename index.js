@@ -18,6 +18,7 @@ const ioServer = new Server(http);
 const port = process.env.PORT || 4000;
 const historySize = 50;
 
+
 let viewCounts = await initializeViewCountObj(url + "methods");
 
 let history = [];
@@ -36,6 +37,7 @@ ioServer.on("connection", (client) => {
     
     // Log de pagina naar console
     cLog.page(client.id, page);
+
 
     // Verhoog de viewcount van de pagina
     viewCounts.viewCount[page]++;
@@ -249,3 +251,5 @@ export async function postJson(url, body) {
 //             </section>
 //         </section>
 //     </section>
+
+// socket connection for drawing
