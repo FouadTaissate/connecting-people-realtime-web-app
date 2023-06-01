@@ -1422,3 +1422,6 @@ footer ul li {
 
 
 /* styling van de tekenruimte */
+   .h2-tekenruimte{
+    font-family: var(--vtPrimaryFont);
+   }
