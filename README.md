@@ -3,6 +3,8 @@
 # Visual Thinking in het HBO
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 De website van Visual thinking in het HBO die  wij hebben ontworpen
+<img width="738" alt="image" src="https://github.com/FouadTaissate/connecting-people-realtime-web-app/assets/112857270/3ca616e4-e957-46b7-b5b4-8d6196cfeb4a">
+
 
 ## Inhoudsopgave
 
@@ -27,9 +29,17 @@ Ontwerp en maak met een team een website voor een opdrachtgever een verassende r
 
 ### tipruimte
 
+<img width="943" alt="image" src="https://github.com/FouadTaissate/connecting-people-realtime-web-app/assets/112857270/b19eb04d-9a87-4a3b-a8e2-acbac56cbc0a">
+
+
+
 ### viewcounter
 
+
+
 ### tekenruimte
+
+<img width="622" alt="image" src="https://github.com/FouadTaissate/connecting-people-realtime-web-app/assets/112857270/c9cd9093-1dec-4dac-9edc-e044dffd1831">
 
 
 ## Kenmerken
