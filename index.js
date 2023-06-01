@@ -102,11 +102,6 @@ ioServer.on("connection", (client) => {
   });
 });
 
-client.on("mouse", mouseMsg);
-
-function mouseMsg(mouseData) {
-  socket.broadcast.emit("mouse", mouseData);
-}
 // Start een http server op het ingestelde poortnummer en log de url
 
 // Stel afhandeling van formulieren inzx
