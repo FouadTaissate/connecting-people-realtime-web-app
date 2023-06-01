@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 import * as path from "path";
 
 import express from "express";
@@ -12,6 +11,7 @@ const url = "https://api.visualthinking.fdnd.nl/api/v1/";
 // const data = await fetch(url).then((response) => response.json())
 
 // Maak een nieuwe express app
+const fetch = require("node-fetch");
 const server = express();
 const http = createServer(server);
 const ioServer = new Server(http);
