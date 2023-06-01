@@ -9,7 +9,6 @@ import { log } from "console";
 import * as cLog from "./helpers/customLog.js";
 
 const url = "https://api.visualthinking.fdnd.nl/api/v1/";
-// const data = await fetch(url).then((response) => response.json())
 
 // Maak een nieuwe express app
 const server = express();
@@ -17,7 +16,6 @@ const http = createServer(server);
 const ioServer = new Server(http);
 const port = process.env.PORT || 4000;
 const historySize = 50;
-
 
 let viewCounts = await initializeViewCountObj(url + "methods");
 
@@ -34,10 +32,8 @@ ioServer.on("connection", (client) => {
 
   // Luister naar welke pagina de gebruiker bezoekt
   client.on("page", (page) => {
-    
     // Log de pagina naar console
     cLog.page(client.id, page);
-
 
     // Verhoog de viewcount van de pagina
     viewCounts.viewCount[page]++;
