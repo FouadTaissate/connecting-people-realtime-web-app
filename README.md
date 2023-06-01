@@ -39,6 +39,10 @@ Ontwerp en maak met een team een website voor een opdrachtgever een verassende r
 
 ### tekenruimte
 
+In de tekenruimte kun je door met je muis te slepen tekenen op het canvas. Wanneer een andere gebruiker verbinding maakt, kun je samen tekenen op het canvas.
+
+De tekenruimte is gebouwd met behulp van p5.js, JavaScript en sockets.
+
 <img width="622" alt="image" src="https://github.com/FouadTaissate/connecting-people-realtime-web-app/assets/112857270/c9cd9093-1dec-4dac-9edc-e044dffd1831">
 
 
