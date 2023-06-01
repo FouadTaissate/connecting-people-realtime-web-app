@@ -1,8 +1,8 @@
-<%- include('./partials/headDetail') %>
+<%- include('./partials/headSteps') %>
 
     <nav>
         <ul>
-            <a href="/method/<%= method.slug %>/beschrijving">
+            <a href="/method/<%= method.slug %>">
                 <li>
                     <h2 class="h2-detail">Beschrijving</h2>
                 </li>
@@ -23,11 +23,13 @@
                 </li>
             </a>
         </ul>
-    </nav>
+      </nav>
+      <%- include('./partials/viewCount') %>
     </section>
 
     <img class="template-url" src="<%= method.template?.url %>" alt="">
 
+    
     <section class="flex-s">
         <section class="full-b">
             <section class="tags-b">
@@ -60,83 +62,26 @@
                 </h2>
             </section>
 
-            <section class="columntag">
-                <section class="tags-b">
-                    <% method.steps.forEach(step=> { %>
-                        <% if (step.title=="Stap 1" ) {%>
-                            <h2 class="tag">
-                                <%= step.title %>
-                            </h2>
-                            <% } %>
-                                <% }) %>
-                </section>
+            
 
-                <section class="tags-b">
-                    <% method.steps.forEach(step=> { %>
-                        <% if (step.title=="Stap 2" ) {%>
-                            <h2 class="tag-hollow">
-                                <%= step.title %>
-                            </h2>
-                            <% } %>
-                                <% }) %>
-                </section>
-
-                <section class="tags-b">
-                    <% method.steps.forEach(step=> { %>
-                        <% if (step.title=="Stap 3" ) {%>
-                            <h2 class="tag-hollow">
-                                <%= step.title %>
-                            </h2>
-                            <% } %>
-                                <% }) %>
-                </section>
-
-                <section class="tags-b">
-                    <% method.steps.forEach(step=> { %>
-                        <% if (step.title=="Stap 4" ) {%>
-                            <h2 class="tag-hollow">
-                                <%= step.title %>
-                            </h2>
-                            <% } %>
-                                <% }) %>
-                </section>
-
-                <section class="tags-b">
-                    <% method.steps.forEach(step=> { %>
-                        <% if (step.title=="Stap 5" ) {%>
-                            <h2 class="tag-hollow">
-                                <%= step.title %>
-                            </h2>
-                            <% } %>
-                                <% }) %>
-                </section>
-
-                <section class="tags-b">
-                    <% method.steps.forEach(step=> { %>
-                        <% if (step.title=="Stap 6" ) {%>
-                            <h2 class="tag-hollow">
-                                <%= step.title %>
-                            </h2>
-                            <% } %>
-                                <% }) %>
-                </section>
-            </section>
-
-            <section class="step">
-                <h3>
-                    Stap 1 - De titel
-                </h3>
-            </section>
-
-            <section>
-                <% method.steps.forEach(step=> { %>
-                    <% if (step.title=="Stap 1" ) {%>
-                        <h3 class="description">
-                            <%- step.description.html %>
-                        </h3>
-                        <% } %>
-                            <% }) %>
-            </section>
+            <div class="buttondeel">
+                <h4>Stappenplan</h4>
+                <button id="stappenplanbutton">
+                <img src="/assets/pijl-hexagon-naar-beneden.svg" alt="Pijl naar beneden">
+                </button>
+            </div>
+            <div id="stappen" class="stappen">
+                <ol class="tobiashaha">
+                    <% method.steps.forEach(step => { %>
+                        <li>
+                            <h4><%- step.title %></h4>
+                            <div class="step-description">
+                                <%- step.description.html %>
+                            </div>
+                        </li>
+                    <% }) %>
+                </ol>         
+            </div>
         </section>
     </section>
     </main>

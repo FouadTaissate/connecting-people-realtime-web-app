@@ -1,8 +1,12 @@
+import fetch from "node-fetch";
 import * as path from "path";
 
 import express from "express";
 import { Server } from "socket.io";
 import { createServer } from "http";
+import initializeViewCountObj from "./helpers/initializeViewCountObj.js";
+import { log } from "console";
+import * as cLog from "./helpers/customLog.js";
 
 const url = "https://api.visualthinking.fdnd.nl/api/v1/";
 // const data = await fetch(url).then((response) => response.json())
@@ -14,6 +18,9 @@ const ioServer = new Server(http);
 const port = process.env.PORT || 4000;
 const historySize = 50;
 
+
+let viewCounts = await initializeViewCountObj(url + "methods");
+
 let history = [];
 
 server.use(express.static(path.resolve("public")));
@@ -21,7 +28,24 @@ server.use(express.static(path.resolve("public")));
 // Start de socket.io server op
 ioServer.on("connection", (client) => {
   // Log de connectie naar console
-  console.log(`user ${client.id} connected`);
+  cLog.connect(client.id);
+
+  client.emit("message", "Welcome to the chat!");
+
+  // Luister naar welke pagina de gebruiker bezoekt
+  client.on("page", (page) => {
+    
+    // Log de pagina naar console
+    cLog.page(client.id, page);
+
+
+    // Verhoog de viewcount van de pagina
+    viewCounts.viewCount[page]++;
+
+    viewCounts.users[page].push(client.id);
+
+    ioServer.emit("updatedViewCount", viewCounts.viewCount);
+  });
 
   // Stuur de history
   client.emit("history", history);
@@ -45,7 +69,25 @@ ioServer.on("connection", (client) => {
   // Luister naar een disconnect van een gebruiker
   client.on("disconnect", () => {
     // Log de disconnect
-    console.log(`user ${client.id} disconnected`);
+    cLog.disconnect(client.id);
+
+    // Loop door de viewCounts.users
+    for (const [key, array] of Object.entries(viewCounts.users)) {
+      // Loop door iedere array in de viewCounts.users
+      for (let i = 0; i < array.length; i++) {
+        // Als de client.id in de array zit
+        if (array[i] === client.id) {
+          // Verminder de viewCount van de pagina
+          const currentPage = key;
+          viewCounts.viewCount[currentPage]--;
+
+          // Verwijder de client.id uit de array
+          array.splice(i, 1);
+        }
+      }
+    }
+    // Stuur de nieuwe viewCounts naar alle clients
+    ioServer.emit("updatedViewCount", viewCounts.viewCount);
   });
 });
 
@@ -122,7 +164,7 @@ server.get("/tekenmethodes", (request, response) => {
   });
 });
 
-server.get("/method/:slug/beschrijving", (request, response) => {
+server.get("/method/:slug", (request, response) => {
   let detailPageUrl = url + "method/" + request.params.slug;
 
   fetchJson(detailPageUrl).then((data) => {
