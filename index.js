@@ -62,6 +62,16 @@ ioServer.on("connection", (client) => {
     ioServer.emit("message", message);
   });
 
+  client.on("mouse", (mouseData) => {
+    // stuur  de muis data
+    client.broadcast.emit("mouse", mouseData);
+  });
+
+  client.on("newMouse", (dataNew) => {
+    // stuur de muis new data
+    ioServer.emit("newMouse", dataNew);
+  });
+
   // Luister naar een disconnect van een gebruiker
   client.on("disconnect", () => {
     // Log de disconnect
