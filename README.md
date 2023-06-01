@@ -27,6 +27,8 @@ Ontwerp en maak met een team een website voor een opdrachtgever een verassende r
 
 ### tipruimte
 
+### viewcounter
+
 ### tekenruimte
 
 
