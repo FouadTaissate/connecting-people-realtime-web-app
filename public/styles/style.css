@@ -792,7 +792,7 @@ h3 p {
   text-transform: none;
 }
 
-.button-homepage {
+.button-homepage, .carousel-button-left, .carousel-button-right{
   width: 72px;
   height: 66px;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
@@ -1794,13 +1794,6 @@ footer ul li {
 
 /* tobias toevoegingen */
 
-.carousel-button-right {
-  rotate: 90deg;
-}
-
-.carousel-button-left {
-  rotate: 90deg;
-}
 
 #stappenplanbutton {
   background-color: white;
