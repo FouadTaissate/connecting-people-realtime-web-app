@@ -763,6 +763,14 @@ h3 {
   color: var(--vtSec-DarkBlue);
 }
 
+.text p{
+  font-size: 1rem;
+}
+
+.text blockquote{
+  margin-bottom: 1.5rem;
+}
+
 blockquote {
   color: var(--vtSec-Orange);
   font-family: var(--vtPrimaryFont);
@@ -784,6 +792,7 @@ p {
 
 .lowercase {
   text-transform: none;
+  line-height: 1.5rem;
 }
 
 h3 p {
@@ -1813,6 +1822,8 @@ footer ul li {
 
 .step-description p {
   text-transform: none;
+  font-size: 1rem;
+  font-family: yrsa;
 }
 
 .stappen {
@@ -1821,6 +1832,7 @@ footer ul li {
 
 .stappen.toon {
   display: block;
+  margin-top: 2rem;
 }
 
 .stappen p {
