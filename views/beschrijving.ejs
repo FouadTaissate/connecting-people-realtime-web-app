@@ -23,11 +23,12 @@
             </a>
         </ul>
     </nav>
+    <%- include('./partials/viewCount') %>
     </section>
 
     <section class="flex-b">
         <img class="template-url" src="<%= method.template?.url %>" alt="">
-    
+        
         <h3 class="text">
             <%- method.description.html %>
         </h3>
