@@ -74,10 +74,10 @@ De tekenruimte is gebouwd met behulp van p5.js, JavaScript en sockets.
 1. Om in de repository te werken en aanpassingen te maken moet je node.js downloaden versie: .
 2. Clone of download deze respository.
 3. Open hem in je `code-editor`.
-4. open de `terminal` en type `npm install`.
+4. Open de `terminal` en typ `npm install` en `npm install socket.io`.
 5. Daarna door gerbruik van `npm start` krijg je een localhost link waar je de code live 
-6. gebruik `gitignore` voor de modules zodat het niet allemaal op github komt te staan.
-7. Live zetten van je project kan met behulp van cyclic.
+6. Gebruik `gitignore` voor de modules zodat het niet allemaal op github komt te staan.
+7. Live zetten van je project kan met behulp van [adaptable](https://adaptable.io/).
 
 ## Bronnen
 
