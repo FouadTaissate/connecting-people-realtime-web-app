@@ -4,7 +4,6 @@ import * as path from "path";
 import express from "express";
 import { Server } from "socket.io";
 import { createServer } from "http";
-import initializeViewCountObj from "./helpers/initializeViewCountObj.js";
 import { log } from "console";
 import * as cLog from "./helpers/customLog.js";
 
@@ -16,6 +15,8 @@ const http = createServer(server);
 const ioServer = new Server(http);
 const port = process.env.PORT || 4000;
 const historySize = 50;
+
+import initializeViewCountObj from "./helpers/initializeViewCountObj.js";
 
 let viewCounts = await initializeViewCountObj(url + "methods");
 
