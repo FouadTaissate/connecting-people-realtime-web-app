@@ -20,8 +20,13 @@ De website van Visual thinking in het HBO die  wij hebben ontworpen
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
 
-### opdracht
+## opdracht
 Ontwerp en maak met een team een website voor een opdrachtgever een verassende realtime applicatie
+
+### UI-stack
+We hebben samen in een figjam file gewerkt om de ui-stack te tekenen
+[Naar onze gezamelijke figjam](https://www.figma.com/file/JfuYtxJWFQRI0MsouXhyBR/Visual-Thinking-UI-Stack?type=whiteboard&node-id=0%3A1&t=yc4GHru55iSKtX4Y-1)
+
 
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
